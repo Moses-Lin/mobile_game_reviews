@@ -12,12 +12,14 @@ Beautifulsoup and Selenium was used to collect a list of App Id URLs for the Top
 A Google Play Scraper (https://github.com/JoMingyu/google-play-scraper) was then used to obtain up to 250 reviews for each game by looping through the App Id URL list from before. Reviews and characteristics of each game were collected.
 
 Overall, there were 1,041,127 reviews collected from a total of 5122 mobile games.
+- Note: Scraping gives different # of games and reviews each time, but will always be around ~1,000,000 reviews and ~5100 games.
 
 There is some class imbalance in this dataset with rating 5 and other ratigns, obviously due to the games collected being Top Free and Top Paid games.
 
 ![imbalance](/images/classimbalance.png)
 
 To deal with this imbalance, I downsampled to the size of the smallest class, rating 2, resulting in 74308 reviews per class for a total of 371,540 reviews.
+This downsampling also helps with running models later on that would normally take too long.
 
 # Repository Contents
 - Scraping (scraping.ipynb): The process used to obtain the datasets in preparation for cleaning and EDA.
@@ -25,6 +27,25 @@ To deal with this imbalance, I downsampled to the size of the smallest class, ra
 - Modeling (Modeling.ipynb): Various models were examined and the best model was identified.
 
 # EDA
+Looking at the top 20 words across all mobile games did not provide much insight, as they're all undoubtedly linked to games and having fun. For single words, there is not much of a clear cut difference between rating 1 and rating 2. One thing of note though was the strong prevalence of the term ad, time, and money.
+
+![rating1](/images/top20mostcommonwordsrating1.png)
+
+Rating 3 and 4 seems to simply be a mix of rating 1 & 2, and rating 5. Rating 5 offers only positive words, but nothing particularly insightful as to why a mobile game is doing well. Perhaps one insight is the word graphics.
+
+![rating5](/images/top20mostcommonwordsrating5.png)
+
+In order to gain further information as to the context of some of these words, I also took a look at bigrams and trigrams. It is clear that the largest indicator for low ratings of 1 to 3 are concerned with the quantity of ads, and the time wasted watching said ads. Even as the rating goes up, it is very apparent the most common bigrams and trigrams are associated with ads.
+
+![trigrams1](/images/top20mostcommontrigramsrating1.png)
+
+There is one insight to be gained from reviews in ratings 3 - 4, and that is the prevalence of "please fix problem" or something similar. Perhaps this is an indication for the ratings in which developers should look for issues in, as these tend to lean more towards constructive criticism with the mix of positive and negative phrases than simply angry reviews that are common in 1 star ratings.
+
+![trigrams3](/images/top20mostcommontrigramsrating3.png)
+
+Rating 5 does not provide any real insights from bigrams/trigrams as they are simply a collection of positive phrases. There is also the issue of certain applications asking its users for 5 star ratings with the incentive of giving rewards. As a result, this category may not provide the most insightful feedback for developers. This is also a consideration I have to make when modeling, as there may be many reviews that are entirely nonsensical due to this phenomenon.
+
+![trigrams5](/images/top20mostcommontrigramsrating5.png)
 
 # Models
 
