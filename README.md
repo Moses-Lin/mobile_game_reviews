@@ -15,12 +15,14 @@ Overall, there were 1,041,127 reviews collected from a total of 5122 mobile game
 
 There is some class imbalance in this dataset with rating 5 and other ratigns, obviously due to the games collected being Top Free and Top Paid games.
 
+![imbalance](/images/classimbalance.png)
+
 To deal with this imbalance, I downsampled to the size of the smallest class, rating 2, resulting in 74308 reviews per class for a total of 371,540 reviews.
 
 # Repository Contents
 - Scraping (scraping.ipynb): The process used to obtain the datasets in preparation for cleaning and EDA.
-- Exploratory Data Analysis (NLP.ipynb): Analysis of the reviews using NLP methods, and visualization to demonstrate insights.
-- Modeling (NLP.ipynb): Various models were examined and the best model was identified.
+- Exploratory Data Analysis (EDA.ipynb): Analysis of the reviews using NLP methods, and visualization to demonstrate insights.
+- Modeling (Modeling.ipynb): Various models were examined and the best model was identified.
 
 # EDA
 
