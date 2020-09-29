@@ -14,7 +14,7 @@ A Google Play Scraper (https://github.com/JoMingyu/google-play-scraper) was then
 Overall, there were 1,041,127 reviews collected from a total of 5122 mobile games.
 - Note: Scraping gives different # of games and reviews each time, but will always be around ~1,000,000 reviews and ~5100 games.
 
-There is some class imbalance in this dataset with rating 5 and other ratigns, obviously due to the games collected being Top Free and Top Paid games.
+There is some class imbalance in this dataset with rating 5 and other ratings, obviously due to the games collected being Top Free and Top Paid games.
 
 ![imbalance](/images/classimbalance.png)
 
