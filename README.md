@@ -2,7 +2,7 @@
 Module 5 Final Project by Moses Lin
 
 # Project Goal
-The goal of this project is to develop a multi-class classification model that can correctly predict the rating of a review based off of the content of the review. In doing so, developers could possibly use such a model when proactively asking users for feedback in-game in order to gauge how their game is doing without taking a possible hit to their ratings should users leave negative feedback in the app store. After reviews are classified, they may be analyzed more specifically to address problem areas or to focus on desireable features.
+The goal of this project is to develop a multi-class classification model that can correctly predict the rating of a review based off of the content of the review. In doing so, developers could possibly use such a model when proactively asking users for feedback in-game in order to gauge how their game is doing without taking a possible hit to their ratings should users leave negative feedback in the app store. After reviews are classified, they may be analyzed more specifically to address problem areas or to focus on development or further development of desireable features.
 
 # Dataset
 Data was gathered from the Google Play store on 9/28/2020 at 12:01PM EST.
