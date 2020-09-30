@@ -60,6 +60,7 @@ After dealing with class imbalance with downsampling, a baseline model was creat
 
 ### Performance Metric
 Accuracy was selected as the main metric as True Positive and True Negatives are most important in determining a valid representation of a mobile game's performance. In addition, the dataset is balanced after downsampling, so accuracy will be favored in this scenario.
+
 F1 score was also considered as the cost of a False Negative and False Positive is the same: The developer gets an incorrect rating that is not reflective of their mobile game's performance.
 
 ### Models
