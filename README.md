@@ -29,11 +29,15 @@ This downsampling also helps with running models later on that would normally ta
 # EDA
 Looking at the top 20 words across all mobile games did not provide much insight, as they're all undoubtedly linked to games and having fun. For single words, there is not much of a clear cut difference between rating 1 and rating 2. One thing of note though was the strong prevalence of the term ad, time, and money.
 
+### Words
+
 ![rating1](/images/top20mostcommonwordsrating1.png)
 
 Rating 3 and 4 seems to simply be a mix of rating 1 & 2, and rating 5. Rating 5 offers only positive words, but nothing particularly insightful as to why a mobile game is doing well. Perhaps one insight is the word graphics.
 
 ![rating5](/images/top20mostcommonwordsrating5.png)
+
+### N-grams
 
 In order to gain further information as to the context of some of these words, I also took a look at bigrams and trigrams. It is clear that the largest indicator for low ratings of 1 to 3 are concerned with the quantity of ads, and the time wasted watching said ads. Even as the rating goes up, it is very apparent the most common bigrams and trigrams are associated with ads.
 
@@ -50,15 +54,17 @@ Rating 5 does not provide any real insights from bigrams/trigrams as they are si
 # Models
 After dealing with class imbalance with downsampling, a baseline model was created using a dummy classifier. The accuracy and F1 score of the model was both 20%, which is expected given the now even distribution of 5 classes. The goal is to create a model that can provide significantly better results than random guessing.
 
-Accuracy is selected as the main metric as True Positive and True Negatives are most important in determining a valid representation of a mobile game's performance. 
-F1 score is also considered as the cost of a False Negative and False Positive is the same: The developer gets an incorrect rating that is not reflective of their mobile game's performance.
+### Performance Metric
+Accuracy was selected as the main metric as True Positive and True Negatives are most important in determining a valid representation of a mobile game's performance. 
+F1 score was also considered as the cost of a False Negative and False Positive is the same: The developer gets an incorrect rating that is not reflective of their mobile game's performance.
 
+### Models
 Three different models were fit to the dataset after TF-IDF Vectorization: Naive Bayes, Decision Tree, and Random Forest.
 - Naive Bayes (Accuracy: 45.0% | F1 Score: 44.8%)
 - Decision Tree (Accuracy: 35.4% | F1 Score: 35.1%)     
 - Random Forest (Accuracy: 45.0% | F1 Score: 44.8%)
 
-Support Vector Machine was considered but crashes the kernel due to the dataset still being too large despite downsampling.
+Note: Support Vector Machine was considered but crashes the kernel due to the dataset still being too large despite downsampling.
 
 # Findings
 
