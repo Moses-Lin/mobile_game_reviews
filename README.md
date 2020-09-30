@@ -2,7 +2,7 @@
 Module 5 Final Project by Moses Lin
 
 # Project Goal
-The goal of this project is to develop a multi-class classification model that can correctly predict the rating of a review based off of the content of the review. In doing so, developers could possibly use such a model when proactively asking users for feedback in-game in order to gauge how their game is doing without taking a possible hit to their ratings should users leave negative feedback in the app store. After reviews are classified, they may be analyzed more specifically to address problem areas or to focus on development or further development of desireable features.
+The goal of this project is to develop a multi-class classification model that can correctly predict the rating of a review based off of the content of the review. In doing so, developers could possibly use such a model when proactively asking users for feedback in-game in order to gauge how their game is doing without taking a possible hit to their ratings, should users leave negative feedback in the app store. After reviews are classified, they may be analyzed more specifically to address problem areas or to focus on development or further development of desireable features.
 
 # Dataset
 Data was gathered from the Google Play store on 9/28/2020 at 12:01PM EST.
@@ -48,6 +48,17 @@ Rating 5 does not provide any real insights from bigrams/trigrams as they are si
 ![trigrams5](/images/top20mostcommontrigramsrating5.png)
 
 # Models
+After dealing with class imbalance with downsampling, a baseline model was created using a dummy classifier. The accuracy and F1 score of the model was both 20%, which is expected given the now even distribution of 5 classes. The goal is to create a model that can provide significantly better results than random guessing.
+
+Accuracy is selected as the main metric as True Positive and True Negatives are most important in determining a valid representation of a mobile game's performance. 
+F1 score is also considered as the cost of a False Negative and False Positive is the same: The developer gets an incorrect rating that is not reflective of their mobile game's performance.
+
+Three different models were fit to the dataset after TF-IDF Vectorization: Naive Bayes, Decision Tree, and Random Forest.
+- Naive Bayes (Accuracy: 45.0% | F1 Score: 44.8%)
+- Decision Tree (Accuracy: 35.4% | F1 Score: 35.1%)     
+- Random Forest (Accuracy: 45.0% | F1 Score: 44.8%)
+
+Support Vector Machine was considered but crashes the kernel due to the dataset still being too large despite downsampling.
 
 # Findings
 
