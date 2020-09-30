@@ -71,6 +71,8 @@ Note: Support Vector Machine was considered but crashes the kernel due to the da
 ### About the Model
 The best model was Naive Bayes with an Accuracy of 45% and F1 score of 44.8%. This is better than the baseline model, but is still relatively inaccurate in determining reviews. The loss in accuracy is most likely due to downsampling, as before downsampling was applied, the baseline model provided an accuracy and F1 score of 33%, while Naive Bayes had an Accuracy of 62% and F1 Score of 51%. There is much room for improvement.
 
+![naivebayes](/images/naivebayes.png)
+
 ### About EDA
 It is clear that by looking at common words and n-grams for reviews for all games in general, it is rather difficult to gain any real insights on specific problem areas (except for the sheer magnitude of ads) or favorable features. By aggregating all the reviews for every type of game, all the specific problems that may plague certain games (such as terrible lootbox rates notorious in Asian mobile games) are blanketed by very general reviews. 
 
@@ -82,7 +84,7 @@ It is clear that by looking at common words and n-grams for reviews for all game
 # Future Steps
 - Work with a specific group of mobile games that fill a niche. As previously stated, it will be easier to find problem areas specific to these games, and insights will less likely be blanketed by common low-understanding reviews.
 
-- Determine if there is a significant difference between review aspects in different App Stores (Some mobile games do not run very well on certain platforms and may encounter bugs more frequently than other platforms. For example some games are not properly ported onto certain platforms, or certain games have separate servers for each platform and thus have varying quality of service depending on the population of players on said platform.)
+- Determine if there is a significant difference between review aspects in different App Stores. Some mobile games do not run very well on certain platforms and may encounter bugs more frequently than other platforms. For example some games are not properly ported onto certain platforms, or certain games have separate servers for each platform and thus have varying quality of service depending on the population of players on said platform.
 
-- Work with mobile games in a different language/region. (Different cultures view mobile gaming differently, as spending on lootboxes or "gachas" in mobile games is more accepted and maybe even expected in Asia)
+- Work with mobile games in a different language/region. Different cultures view mobile gaming differently, as spending on lootboxes or "gachas" in mobile games is more accepted and maybe even expected in Asia.
 
