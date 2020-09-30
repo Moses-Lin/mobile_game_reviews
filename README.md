@@ -51,11 +51,11 @@ Rating 5 does not provide any real insights from bigrams/trigrams as they are si
 
 ![trigrams5](/images/top20mostcommontrigramsrating5.png)
 
-# Models
+# Modeling
 After dealing with class imbalance with downsampling, a baseline model was created using a dummy classifier. The accuracy and F1 score of the model was both 20%, which is expected given the now even distribution of 5 classes. The goal is to create a model that can provide significantly better results than random guessing.
 
 ### Performance Metric
-Accuracy was selected as the main metric as True Positive and True Negatives are most important in determining a valid representation of a mobile game's performance. 
+Accuracy was selected as the main metric as True Positive and True Negatives are most important in determining a valid representation of a mobile game's performance. In addition, the dataset is balanced after downsampling, so accuracy will be favored in this scenario.
 F1 score was also considered as the cost of a False Negative and False Positive is the same: The developer gets an incorrect rating that is not reflective of their mobile game's performance.
 
 ### Models
@@ -68,7 +68,21 @@ Note: Support Vector Machine was considered but crashes the kernel due to the da
 
 # Findings
 
+### About the Model
+The best model was Naive Bayes with an Accuracy of 45% and F1 score of 44.8%. This is better than the baseline model, but is still relatively inaccurate in determining reviews. The loss in accuracy is most likely due to downsampling, as before downsampling was applied, the baseline model provided an accuracy and F1 score of 33%, while Naive Bayes had an Accuracy of 62% and F1 Score of 51%. There is much room for improvement.
 
+### About EDA
+It is clear that by looking at common words and n-grams for reviews for all games in general, it is rather difficult to gain any real insights on specific problem areas (except for the sheer magnitude of ads) or favorable features. By aggregating all the reviews for every type of game, all the specific problems that may plague certain games (such as terrible lootbox rates notorious in Asian mobile games) are blanketed by very general reviews. 
+
+### Limitations:
+- I am running these models on a MacBook Air with 1.1 Ghz Dual-Core Intel Core i3. Perhaps a stronger computer could be used or a cloud service like Amazon Web Services could be used to run models that I normally cannot.
+- There is a lot of specific mobile game jargon that may not be picked up or simply removed during the pre-processing step. 
+- Rating is not necessarily a good indicator of app performance. As previously mentioned, many games bait users into giving good reviews by offering in-game rewards for doing so. In addition, games that are well received by an audience may not have a sustainable model and can "die" much earlier than expected. Revenue would be a much better indicator, but such information is not publicly available most of the time.
 
 # Future Steps
+- Work with a specific group of mobile games that fill a niche. As previously stated, it will be easier to find problem areas specific to these games, and insights will less likely be blanketed by common low-understanding reviews.
+
+- Determine if there is a significant difference between review aspects in different App Stores (Some mobile games do not run very well on certain platforms and may encounter bugs more frequently than other platforms. For example some games are not properly ported onto certain platforms, or certain games have separate servers for each platform and thus have varying quality of service depending on the population of players on said platform.)
+
+- Work with mobile games in a different language/region. (Different cultures view mobile gaming differently, as spending on lootboxes or "gachas" in mobile games is more accepted and maybe even expected in Asia)
 
