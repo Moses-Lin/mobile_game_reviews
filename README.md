@@ -29,7 +29,7 @@ This downsampling also helps with running models later on that would normally ta
 # EDA
 Looking at the top 20 words across all mobile games did not provide much insight, as they're all undoubtedly linked to games and having fun. For single words, there is not much of a clear cut difference between rating 1 and rating 2. One thing of note though was the strong prevalence of the term ad, time, and money.
 
-### Words
+### Most common Words
 
 ![rating1](/images/top20mostcommonwordsrating1.png)
 
@@ -37,7 +37,7 @@ Rating 3 and 4 seems to simply be a mix of rating 1 & 2, and rating 5. Rating 5 
 
 ![rating5](/images/top20mostcommonwordsrating5.png)
 
-### N-grams
+### Most common N-grams
 
 In order to gain further information as to the context of some of these words, I also took a look at bigrams and trigrams. It is clear that the largest indicator for low ratings of 1 to 3 are concerned with the quantity of ads, and the time wasted watching said ads. Even as the rating goes up, it is very apparent the most common bigrams and trigrams are associated with ads.
 
@@ -62,11 +62,13 @@ F1 score was also considered as the cost of a False Negative and False Positive 
 Three different models were fit to the dataset after TF-IDF Vectorization: Naive Bayes, Decision Tree, and Random Forest.
 - Naive Bayes (Accuracy: 45.0% | F1 Score: 44.8%)
 - Decision Tree (Accuracy: 35.4% | F1 Score: 35.1%)     
-- Random Forest (Accuracy: 45.0% | F1 Score: 44.8%)
+- Random Forest (Accuracy: 44.5% | F1 Score: 43.0%)
 
 Note: Support Vector Machine was considered but crashes the kernel due to the dataset still being too large despite downsampling.
 
 # Findings
+
+
 
 # Future Steps
 
