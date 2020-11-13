@@ -5,6 +5,11 @@ Module 5 Final Project by Moses Lin
 
 https://docs.google.com/presentation/d/1AmWCD1-_4RSNFs2wypvlJYT3oFuhI0q80vF7y1cXsC0/edit?usp=sharing
 
+# Continuation of this project
+To continue with this project due to limitations, I will be scaling down the scope:
+Single Game: https://github.com/Moses-Lin/romreview
+Niche of Game: TBD
+
 # Project Goal
 The goal of this project is to develop a multi-class classification model that can correctly predict the rating of a review based off of the content of the review. In doing so, developers could possibly use such a model when proactively asking users for feedback in-game in order to gauge how their game is doing without taking a possible hit to their ratings, should users leave negative feedback in the app store. After reviews are classified, they may be analyzed more specifically to address problem areas or to focus on development or further development of desireable features.
 
